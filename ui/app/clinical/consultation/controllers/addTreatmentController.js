@@ -135,9 +135,17 @@ angular.module('bahmni.clinical')
             })();
 
             var encounterDate = DateUtil.parse($scope.consultation.encounterDateTime);
-            var newTreatment = function () {
-                var newTreatment = new Bahmni.Clinical.DrugOrderViewModel(treatmentConfig, null, encounterDate);
-                newTreatment.isEditAllowed = false;
+            const newTreatment = () => {
+                const newTreatment = new Bahmni.Clinical.DrugOrderViewModel(treatmentConfig, null, encounterDate);
+                    Object.assign(newTreatment, {
+                        isEditAllowed: false,
+                        isUniformFrequency: false,
+                        variableDosingType: {
+                            morningDose: 0,
+                            afternoonDose: 0,
+                            eveningDose: 0
+                        }
+                    });
                 return newTreatment;
             };
 
