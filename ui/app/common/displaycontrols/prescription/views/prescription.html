@@ -1,11 +1,15 @@
 <link rel="stylesheet" href="../styles/clinicalPrint.css"/>
 <div class="print-wrapper prescription-print" ng-switch="encounterDrugOrderMap!=null">
     <div class="print-header" ng-if="printParams">
-        <h1 class="print-title-with-logo"><img height="35px" width="35px" ng-if="printParams.logo" ng-src="{{printParams.logo}}" alt="logo"/>{{printParams.title}}</h1>
-        <div class="clinic-info">
-            <span>{{printParams.locationName}}</span>
-            <span class="address">{{printParams.locationAddress}}</span>
-        </div>
+        <h1 class="print-title-with-logo">
+          <img height="160px" width="130px" ng-if="printParams.logo" ng-src="{{printParams.logo}}" alt="logo"/>
+          <div class="hospital-info">
+            <span class="hospital-name">Jawahar Hospital</span>
+            <span class="hospital-details">
+              130 Kamaraj Nagar, Rajapalayam - 626117<br>
+              Visiting Hours: 9:30AM to 1:00PM (Everyday),<br>
+              5.30PM to 8PM (Except Friday and Sunday)<br>
+              Ph.no: 04563-220301</span></h1>
         <div class="clinic-info">
             <span> {{printParams.header}}</span>
         </div>
